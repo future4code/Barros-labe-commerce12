@@ -8,13 +8,30 @@ export const LogoContainer = styled.div`
     justify-content: center;
     align-items: center;
 `
-
+/// --- toda configuracao abaixo é do component ContainerFiltro -- ////////
 export const FilterContainer = styled.div`
-    width: 20vw;
-    background: green;
-    height: 100vh;
+    width: 100%;
+    background: yellow;
+    display: flex;
+`
+export const DivFilters = styled.div `
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 20px;
+    label {
+        margin-bottom: 5px;
+    }
+`
+export const InputFilter = styled.input `
+    padding: 2px;
+    font-size: 16px;
+    border-radius: 5px;
 `
 
+
+///-------------------//////////////---------------------//////////////
 export const CartContainer = styled.div`
     width: 20vw;
     height: 100vh;
