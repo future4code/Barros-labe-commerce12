@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {BotaoAdicionar, Layout, ProdutoCamp, CardProduto, TopoProdutos } from "../style";
+import {BotaoAdicionar, Layout, ProdutoCamp, CardProduto, TopoProdutos, CartContainer } from "../style";
 import BtnImgAdd from '../img/botaoAdd.png'
 import MockProdutos from "./mockupProdutos";
 import { Filters } from './Filtros'
@@ -49,9 +49,8 @@ function RenderProduto(){
 
     
     return(
-            <ProdutoCamp>
-              <Logo/>
-              <ContainerFiltro
+          <Layout>
+            <ContainerFiltro
                 precoMin={precoMin}
                 setPrecoMin={setPrecoMin}
 
@@ -60,7 +59,10 @@ function RenderProduto(){
 
                 inputName={inputName}
                 setInputName={setInputName}
-              />
+              />    
+            <ProdutoCamp>
+              <Logo/>
+
 
               <TopoProdutos>
                   <label>Quantidade de produtos: {renderizarProdutos.length}</label>
@@ -73,7 +75,8 @@ function RenderProduto(){
               </TopoProdutos>
               {renderizarProdutos}
             </ProdutoCamp>
-        
+            <CartContainer />
+          </Layout>  
       )
 }
 

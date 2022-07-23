@@ -10,16 +10,18 @@ export const LogoContainer = styled.div`
 `
 /// --- toda configuracao abaixo é do component ContainerFiltro -- ////////
 export const FilterContainer = styled.div`
-    width: 100%;
+    width: 20vw;
     background: yellow;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 export const DivFilters = styled.div `
     display: flex;
     flex-direction: column;
     font-size: 17px;
     font-weight: bold;
-    margin: 10px 20px;
+    margin-top: 50px;
     label {
         margin-bottom: 5px;
     }
@@ -28,6 +30,19 @@ export const InputFilter = styled.input `
     padding: 2px;
     font-size: 16px;
     border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    background: none;
+    outline: 0;
+    :hover{
+        border-bottom: 2px solid black;
+    }
+
+    :focus{
+        font-size: 18px;
+        border-bottom: 3px solid black;
+    }
 `
 
 
@@ -35,7 +50,7 @@ export const InputFilter = styled.input `
 export const CartContainer = styled.div`
     width: 20vw;
     height: 100vh;
-    background-color: red;
+    background-color: blue;
 ` 
 
 export const Layout = styled.div`
