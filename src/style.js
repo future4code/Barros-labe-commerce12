@@ -1,17 +1,38 @@
-import styled from "styled-components";
 
+import styled,  { keyframes } from "styled-components";
+
+const Tittle = keyframes`
+    0%{ color: white }
+    50%{ color: black }
+    100%{ color: white  }
+`
 export const LogoContainer = styled.div`
     width: 100%;
-    height: 100px;
-    background-color: red;
+    height: 10vh;
+    background: rgba(74, 77, 75, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
+    h1{
+        color: white;
+        animation: ${Tittle} 20s linear infinite;
+    }
+    button{
+        background: none;
+        border: none;
+        position: absolute;
+        right: 30px;
+        :hover{
+            transform: scale(1.3);
+            transition: .3s;
+            cursor: pointer;
+        }
+    }
 `
 /// --- toda configuracao abaixo é do component ContainerFiltro -- ////////
 export const FilterContainer = styled.div`
     width: 20vw;
-    background: yellow;
+    background: #dee3e0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,22 +70,33 @@ export const InputFilter = styled.input `
 ///-------------------//////////////---------------------//////////////
 export const CartContainer = styled.div`
     width: 20vw;
-    height: 100vh;
-    background-color: blue;
+    height: 90vh;
+    background: #dee3e0 ;
 ` 
+
+export const Topo = styled.div`
+    width: 100vw;
+    height: 10vh;
+`
+
+export const MainContainer = styled.div`
+    width: 100vw;
+    height: 90vh;
+    background: #fff;
+    display: flex;
+`
 
 export const Layout = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: grey;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 `
 
 export const ProdutoCamp = styled.div`
     width: 60vw;
-    border: 2px solid black;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,6 +112,7 @@ export const CardProduto = styled.div`
     align-items: center;
     margin: 10px 10px;
     border-radius: 20px;
+    border: 2px solid black;
     img{
         width: 4vw;
         height: 12vh;
@@ -110,13 +143,28 @@ export const BotaoAdicionar = styled.div`
     background-size: cover;
 `
 
+export const BotaoCart = styled.div`
+    background-image: url(${(props)=>props.BtnCart});
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
 export const TopoProdutos = styled.div`
     width: 100%;
     height: 50px;
-    background-color: green;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    label{
+        margin-left: 20px;
+    }
+    select{
+        margin-right: 20px;
+        border: none;
+    }
 ` 
 export const FiltroContainer = styled.div`
     display: flex;

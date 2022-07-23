@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import {BotaoAdicionar, Layout, ProdutoCamp, CardProduto, TopoProdutos, CartContainer } from "../style";
+import { MainContainer, Topo,BotaoAdicionar, Layout, ProdutoCamp, CardProduto, TopoProdutos, CartContainer } from "../style";
 import BtnImgAdd from '../img/botaoAdd.png'
 import MockProdutos from "./mockupProdutos";
-import { Filters } from './Filtros'
+import { Filters } from './Filtros';
 import Logo from "./Header";
-
 import {ContainerFiltro } from '../components/ContainerFiltro'
 
 function RenderProduto(){
@@ -44,12 +43,13 @@ function RenderProduto(){
               <button><BotaoAdicionar BtnAdd={BtnImgAdd}/></button>
           </CardProduto>
         )
-      })
-
-
-    
-    return(
+      });
+      return(
           <Layout>
+            <Topo>
+              <Logo/>
+            </Topo>
+            <MainContainer>
             <ContainerFiltro
                 precoMin={precoMin}
                 setPrecoMin={setPrecoMin}
@@ -59,24 +59,23 @@ function RenderProduto(){
 
                 inputName={inputName}
                 setInputName={setInputName}
-              />    
-            <ProdutoCamp>
-              <Logo/>
-
-
-              <TopoProdutos>
-                  <label>Quantidade de produtos: {renderizarProdutos.length}</label>
-                  <Filters
-                  Query={Query}
-                  SetQuery={SetQuery}
-                  Sort={Sort}
-                  SetSort={SetSort}
-                  />
-              </TopoProdutos>
-              {renderizarProdutos}
-            </ProdutoCamp>
-            <CartContainer />
-          </Layout>  
+              />
+              <ProdutoCamp>
+          
+          <TopoProdutos>
+              <label>Quantidade de produtos: {renderizarProdutos.length}</label>
+              <Filters
+              Query={Query}
+              SetQuery={SetQuery}
+              Sort={Sort}
+              SetSort={SetSort}
+              />
+          </TopoProdutos>
+          {renderizarProdutos}
+        </ProdutoCamp>
+        <CartContainer />
+      </MainContainer>
+    </Layout>  
       )
 }
 
